@@ -24,7 +24,7 @@ public class BankAPI
             clientSocket = echoServer.accept();
             is = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             os = new PrintStream(clientSocket.getOutputStream());
-            line = is.readLine();
+            line = is.readLine(); // Request expected all on one line
             System.out.println(line);
             os.println(parse(acc, line)); // Parse request from client and return response
         }   
